@@ -1,16 +1,17 @@
 // import logo from './logo.svg';
-// import './App.css';
+import "./styles.css";
 
 function App() {
 return (
     <div className="calculator-grid">
         <div className="output"> {/* for upper box of the calculator */}
-            <div className="previous-operand"></div>
-            <div className="current-operand"></div> {/*current number being inputed */}
+            <div className="previous-operand">10000+</div>
+            <div className="current-operand">30000</div> {/*current number being inputed */}
                 
         </div>
         <button className="span-two">AC</button> {/*called span 2 as the clear button takes 2 columns */}
         <button>Del</button> 
+        <button>÷</button>
         <button>1</button> 
         <button>2</button> 
         <button>3</button> 

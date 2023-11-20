@@ -1,0 +1,37 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: linear-gradient(to right, #ADD8E6, #800080);
+
+}
+
+.calculator-grid{
+    display:grid;
+    margin-top: 2rem; /*Adds 36px spacing from the top*/
+    grid-template-columns: repeat(4,6rem); /*spacing width for each column*/
+    grid-template-rows: minmax(7rem,auto) repeat(5,6rem); /*Auto is used here just in case calculator digits need to expand to second line*/
+}
+
+.span-two{
+    grid-column: span 2;
+}
+
+.output{
+    grid-column: 1/-1; /*used to take up entire top row*/
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column; /*used to stack numbers*/
+}
+
+.output .previous-operand{
+    color: rgba(255,255,255,0.75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand{
+    color: white;
+    font-size: 2.5rem;
+}
