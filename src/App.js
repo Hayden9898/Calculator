@@ -1,12 +1,31 @@
 // import logo from './logo.svg';
 import "./styles.css";
 
+const ACTIONS = {
+    ADD_DIGIT: 'add-digit',
+    CHOOSE_OPERATION: 'choose-operation',
+    CLEAR: 'clear',
+    DELETE_DIGIT: 'delete-digit',
+    EVALUATE: 'evaluate'
+}
+
+function reducer(state, {type, payload}) {
+    switch(type){
+        case ACTIONS.ADD_DIGIT:
+        return{
+            ...state,
+            currentOperand: `${currentOperand || ""}${payload.digit}`
+        }
+    }
+}
+dispatch({type: ACTIONS.ADD_DIGIT, digit, payload: {digit: 1}}) {/*This adds the digit to the current opperand */}
 function App() {
+    const[{currentOperand, previousOperand, operation}, dispatch] = useReducer(reducer , {})
 return (
     <div className="calculator-grid">
         <div className="output"> {/* for upper box of the calculator */}
-            <div className="previous-operand">10000+</div>
-            <div className="current-operand">30000</div> {/*current number being inputed */}
+            <div className="previous-operand">{previousOperand} {operation}</div>
+            <div className="current-operand">{currentOperand}</div> {/*current number being inputed */}
                 
         </div>
         <button className="span-two">AC</button> {/*called span 2 as the clear button takes 2 columns */}
