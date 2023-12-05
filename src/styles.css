@@ -4,15 +4,29 @@
 
 body{
     margin: 0;
-    background: linear-gradient(to right, #ADD8E6, #800080);
+    background: linear-gradient(to right, #00AAFF, #800080);
 
 }
 
 .calculator-grid{
     display:grid;
     margin-top: 2rem; /*Adds 36px spacing from the top*/
+    justify-content: center;
     grid-template-columns: repeat(4,6rem); /*spacing width for each column*/
     grid-template-rows: minmax(7rem,auto) repeat(5,6rem); /*Auto is used here just in case calculator digits need to expand to second line*/
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255,255,255, .75);
+    }
+
+.calculator-grid > button:hover,
+.calculator-grid > button:focus{
+    background-color: rgba(255, 255, 255, .9);
 }
 
 .span-two{
@@ -21,9 +35,14 @@ body{
 
 .output{
     grid-column: 1/-1; /*used to take up entire top row*/
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.75);
     display: flex;
     flex-direction: column; /*used to stack numbers*/
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: .75rem;
+    word-wrap: break-word;
+    word-break:  break-all;
 }
 
 .output .previous-operand{
